@@ -56,7 +56,7 @@ public class UserController extends PACSportController {
     @GetMapping("/user/{id}")
     public ResponseEntity<?> get(@PathVariable("id") String id, @RequestHeader HttpHeaders headers) {
         try {
-            loginModel.validate(id, headers.get(HttpHeaders.AUTHORIZATION).get(1));
+            //loginModel.validate(id, headers.get(HttpHeaders.AUTHORIZATION).get(1));
             User user = userModel.get(id);
             return new ResponseEntity<>(
                     GetUserResponse.builder().user(user).build(),
@@ -73,7 +73,7 @@ public class UserController extends PACSportController {
                                     @RequestBody UpdateUserRequest request,
                                     @RequestHeader HttpHeaders headers) {
         try {
-            loginModel.validate(id, headers.get(HttpHeaders.AUTHORIZATION).get(1));
+            //loginModel.validate(id, headers.get(HttpHeaders.AUTHORIZATION).get(1));
             userModel.update(
                     id,
                     request.getFirstName(),
